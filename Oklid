@@ -1,0 +1,24 @@
+import math
+
+# Öklid mesafesi hesaplamak için bir fonksiyon
+def euclideanDistance(point1, point2):
+    # İki nokta arasındaki Öklid mesafesini hesapla
+    distance = math.sqrt((point2[0] - point1[0]) ** 2 + (point2[1] - point1[1]) ** 2)
+    return distance
+
+# Noktaların bir listesini oluşturun
+points = [(1, 2), (4, 6), (7, 8), (3, 5)]
+
+# Mesafeleri saklamak için bir liste oluşturun
+distances = []
+
+# Her nokta çifti arasındaki mesafeyi hesapla ve 'distances' listesine ekle
+for i in range(len(points)):
+    for j in range(i + 1, len(points)):
+        distance = euclideanDistance(points[i], points[j])
+        distances.append(distance)
+
+# En küçük mesafeyi bulun
+min_distance = min(distances)
+
+print("Minimum Öklid mesafesi:", min_distance)
